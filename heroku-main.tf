@@ -5,7 +5,7 @@ resource "heroku_app" "searadev" {
 }
 
 # Create a database, and configure the app to use it
-resource "heroku_addon" "database" {
+resource "heroku_addon" "searadb" {
   app_id = heroku_app.searadev.id
   plan   = "heroku-postgresql:hobby-dev"
 }
