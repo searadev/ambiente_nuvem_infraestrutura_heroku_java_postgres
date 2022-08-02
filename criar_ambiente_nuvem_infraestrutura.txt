@@ -23,14 +23,14 @@
     }
 4-Criar o main.tf para provisionar o APP e o Banco Postgres como addon
     # Create a new Heroku app
-    resource "heroku_app" "searaembu" {
-    name   = "searaembu"
+    resource "heroku_app" "searadev" {
+    name   = "searadev"
     region = "us"
     }
 
     # Create a database, and configure the app to use it
-    resource "heroku_addon" "database" {
-    app_id = heroku_app.searaembu.id
+    resource "heroku_addon" "searadb" {
+    app_id = heroku_app.searadev.id
     plan   = "heroku-postgresql:hobby-dev"
     }
 5-Fazer o MR do projeto até o main
